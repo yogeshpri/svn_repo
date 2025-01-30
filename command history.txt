@@ -1,0 +1,146 @@
+    1  sudo apt update
+    2  sudo apt upgrade
+    3  sudo apt install subversion
+    4  exit
+    5  mkdir devops
+    6  cd devops/
+    7  mkdir svn_repo
+    8  cd svn_repo/
+    9  git --version
+   10  git svn --version
+   11  cd ..
+   12  ls
+   13  ls ./myrepo
+   14  ls ./my_repo
+   15  ls ./svn_repo
+   16  ls
+   17  cd svn_repo/
+   18  ls
+   19  cd ..
+   20  sudo svnadmin create /devops/svn_repo/first_repo
+   21  cd ..
+   22  sudo svnadmin create /devops/svn_repo/first_repo
+   23  sudo svnadmin create /devops/svn_repo/
+   24  ls -a
+   25  cd devops
+   26  ls -s
+   27  cd svn_repo/
+   28  ls
+   29  ls -a
+   30  sudo svnadmin create /devops/svn_repo
+   31  sudo svnadmin create /devops/svn_repo/
+   32  cd .. ..
+   33  cd .
+   34  cd ..
+   35  sudo svnadmin create /svn/repos/my_repo
+   36  sudo mkdir /svn/repos
+   37  sudo mkdir -p /svn/repos
+   38  sudo svnadmin create /svn/repos/my_repo
+   39  ls
+   40  cd /svn/my_repo/
+   41  cd /svn
+   42  ls
+   43  ls ./repos/
+   44  ls ./my_repos
+   45  ls ./repos/my_repo
+   46  cd ..
+   47  cd svn/
+   48  ls
+   49  cd repos/
+   50  ls 
+   51  cd my_repo/
+   52  ls
+   53  mkdir -p my_project/{trunk,branches,tags}
+   54  cd ..
+   55  mkdir -p my_project/{trunk,branches,tags}
+   56  clear
+   57  ls
+   58  clear
+   59  svnadmin create /home/ubuntu/svn_repo
+   60  ls /home/ubuntu/svn_repo
+   61  mkdir -p my_project/{trunk,branches,tags}
+   62  ls /home/ubuntu/svn_repo
+   63  mkdir -p my_project/{trunk,branches,tags}
+   64  cd..
+   65  cd ..
+   66  pwd
+   67  cd /home/ubuntu/svn_repo/
+   68  cd ..
+   69  pwd
+   70  mkdir -p my_project/{trunk,branches,tags}
+   71  ls
+   72  cd my_project/
+   73  cd ..
+   74  svn import my_project file:///home/ubuntu/svn_repo -m "Initial import"
+   75  svn list file:///home/ubuntu/svn_repo
+   76* branches
+   77  tags/
+   78  trunk/
+   79  svn list file:///home/ubuntu/svn_repo/branches/tags/trunk
+   80  svn list file:///home/ubuntu/svn_repo/branches/tags/trunk/
+   81  cd
+   82  ls 
+   83  cd svn_repo/
+   84  svn list file:///home/ubuntu/svn_repo/branches/tags/trunk/
+   85  pwd
+   86  cd ..
+   87  svn list file:///home/ubuntu/svn_repo/branches/tags/trunk/
+   88  pwd
+   89  ls
+   90  rmdir devops/
+   91  rmdir devops
+   92  rm -rf devops
+   93  svn list file:///home/ubuntu/svn_repo
+   94  svn checkout
+   95  pwd
+   96  cd svn_repo/
+   97  svn checkout
+   98  cd . . . 
+   99  cd .
+  100  cd ..
+  101  svn checkout
+  102  ls
+  103  cd ubuntu/
+  104  svn checkout
+  105  cd svn_repo/
+  106  svn checkout
+  107  ls
+  108  svn checkout
+  109  cd ..
+  110  svn checkout
+  111  svn checkout file:///home/ubuntu/svn_repo/trunk my_project
+  112  cd my_project
+  113  echo "Hello SVN!" > file1.txt
+  114  echo "This is another test file." > file2.txt
+  115  svn status
+  116  svn add file1.txt file2.txt
+  117  svn commit -m "Initial commit: Added file1.txt, file2.txt"
+  118  svn log
+  119  echo "New line added to file1.txt" >> file1.txt
+  120  svn status
+  121  svn commit -m "Updated file1.txt with a new line"
+  122  svn copy file:///home/ubuntu/svn_repo/trunk file:///home/ubuntu/svn_repo/branches/feature-branch -m
+  123  svn copy file:///home/ubuntu/svn_repo/trunk file:///home/ubuntu/svn_repo/branches/feature-branch -m "Creating feature branch"
+  124  svn list
+  125  svn list file:///home/ubuntu/svn_repo/branches
+  126  feature-branch/
+  127  svn list file:///home/ubuntu/svn_repo/branches/feature-branch/
+  128  svn checkout feature-branch my_feature_branch
+  129  svn checkout file:///home/ubuntu/svn_repo/branches/feature-branch my_feature_branch
+  130  cd my_feature_branch
+  131  echo "Feature branch work" >> file1.txt
+  132  svn commit -m "Updated file1.txt in feature branch"
+  133  sudo apt install git git-svn
+  134  svn info
+  135  cd ..
+  136  svn info
+  137  git svn clone file:///home/ubuntu/svn_repo --stdlayout --no-metadata git-migration
+  138  cd git-migration
+  139  git log --oneline
+  140  ssh-keygen -t rsa -b 4096 -C "yogeshpri001@gmail.com"
+  141  cat ~/.ssh/id_rsa.pub
+  142  git remote add origin git@github.com:yogeshpri/svn_repo.git
+  143  git remote --set-upstream origin master
+  144  git remote set-url origin git@github.com:yogeshpri/svn_repo.git
+  145  git push --set-upstream origin master
+  146  history
