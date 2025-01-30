@@ -1,1 +1,2 @@
 Hello SVN!
+New line added to file1.txt
