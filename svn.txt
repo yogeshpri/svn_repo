@@ -1,0 +1,368 @@
+ubuntu@ip-172-31-45-208:/$ svnadmin create /home/ubuntu/svn_repo
+ubuntu@ip-172-31-45-208:/$ ls /home/ubuntu/svn_repo
+README.txt  conf  db  format  hooks  locks
+ubuntu@ip-172-31-45-208:/$ mkdir -p my_project/{trunk,branches,tags}
+mkdir: cannot create directory ‘my_project’: Permission denied
+mkdir: cannot create directory ‘my_project’: Permission denied
+mkdir: cannot create directory ‘my_project’: Permission denied
+ubuntu@ip-172-31-45-208:/$ mkdir -p my_project/{trunk,branches,tags}
+mkdir: cannot create directory ‘my_project’: Permission denied
+mkdir: cannot create directory ‘my_project’: Permission denied
+mkdir: cannot create directory ‘my_project’: Permission denied
+ubuntu@ip-172-31-45-208:/$ ls /home/ubuntu/svn_repo
+README.txt  conf  db  format  hooks  locks
+ubuntu@ip-172-31-45-208:/$ mkdir -p my_project/{trunk,branches,tags}
+mkdir: cannot create directory ‘my_project’: Permission denied
+mkdir: cannot create directory ‘my_project’: Permission denied
+mkdir: cannot create directory ‘my_project’: Permission denied
+ubuntu@ip-172-31-45-208:/$ cd..
+cd..: command not found
+ubuntu@ip-172-31-45-208:/$ cd ..
+ubuntu@ip-172-31-45-208:/$ cd ..
+ubuntu@ip-172-31-45-208:/$ pwd
+/
+ubuntu@ip-172-31-45-208:/$ cd /home/ubuntu/svn_repo/
+ubuntu@ip-172-31-45-208:~/svn_repo$ cd ..
+ubuntu@ip-172-31-45-208:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-45-208:~$ mkdir -p my_project/{trunk,branches,tags}
+ubuntu@ip-172-31-45-208:~$ ls
+devops  my_project  svn_repo
+ubuntu@ip-172-31-45-208:~$ cd my_project/
+ubuntu@ip-172-31-45-208:~/my_project$ cd ..
+ubuntu@ip-172-31-45-208:~$ svn import my_project file:///home/ubuntu/svn_repo -m "Initial import"
+Adding         my_project/branches
+Adding         my_project/tags
+Adding         my_project/trunk
+Committing transaction...
+Committed revision 1.
+ubuntu@ip-172-31-45-208:~$ svn list file:///home/ubuntu/svn_repo
+branches/
+tags/
+trunk/
+branches/
+tags/
+trunk/
+-bash: branches/: No such file or directory
+-bash: tags/: No such file or directory
+-bash: trunk/: No such file or directory
+ubuntu@ip-172-31-45-208:~$ svn list file:///home/ubuntu/svn_repo/branches/tags/trunk
+svn: warning: W160013: Path '/branches/tags/trunk' not found
+svn: E200009: Could not list all targets because some targets don't exist
+ubuntu@ip-172-31-45-208:~$ svn list file:///home/ubuntu/svn_repo/branches/tags/trunk/
+svn: warning: W160013: Path '/branches/tags/trunk' not found
+svn: E200009: Could not list all targets because some targets don't exist
+ubuntu@ip-172-31-45-208:~$ cd
+ubuntu@ip-172-31-45-208:~$ ls 
+devops  my_project  svn_repo
+ubuntu@ip-172-31-45-208:~$ cd svn_repo/
+ubuntu@ip-172-31-45-208:~/svn_repo$ svn list file:///home/ubuntu/svn_repo/branches/tags/trunk/
+svn: warning: W160013: Path '/branches/tags/trunk' not found
+svn: E200009: Could not list all targets because some targets don't exist
+ubuntu@ip-172-31-45-208:~/svn_repo$ pwd
+/home/ubuntu/svn_repo
+ubuntu@ip-172-31-45-208:~/svn_repo$ cd ..
+ubuntu@ip-172-31-45-208:~$ svn list file:///home/ubuntu/svn_repo/branches/tags/trunk/
+svn: warning: W160013: Path '/branches/tags/trunk' not found
+svn: E200009: Could not list all targets because some targets don't exist
+ubuntu@ip-172-31-45-208:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-45-208:~$ ls
+devops  my_project  svn_repo
+ubuntu@ip-172-31-45-208:~$ rmdir devops/
+rmdir: failed to remove 'devops/': Directory not empty
+ubuntu@ip-172-31-45-208:~$ rmdir devops
+rmdir: failed to remove 'devops': Directory not empty
+ubuntu@ip-172-31-45-208:~$ rm -rf devops
+ubuntu@ip-172-31-45-208:~$ svn list file:///home/ubuntu/svn_repo
+branches/
+tags/
+trunk/
+ubuntu@ip-172-31-45-208:~$ svn checkout
+svn: E205001: Try 'svn help checkout' for more information
+svn: E205001: Not enough arguments provided
+ubuntu@ip-172-31-45-208:~$ svn checkout
+svn: E205001: Try 'svn help checkout' for more information
+svn: E205001: Not enough arguments provided
+ubuntu@ip-172-31-45-208:~$ pwd
+/home/ubuntu
+ubuntu@ip-172-31-45-208:~$ cd svn_repo/
+ubuntu@ip-172-31-45-208:~/svn_repo$ svn checkout
+svn: E205001: Try 'svn help checkout' for more information
+svn: E205001: Not enough arguments provided
+ubuntu@ip-172-31-45-208:~/svn_repo$ cd . . . 
+-bash: cd: too many arguments
+ubuntu@ip-172-31-45-208:~/svn_repo$ cd .
+ubuntu@ip-172-31-45-208:~/svn_repo$ cd .
+ubuntu@ip-172-31-45-208:~/svn_repo$ cd ..
+ubuntu@ip-172-31-45-208:~$ cd ..
+ubuntu@ip-172-31-45-208:/home$ svn checkout
+svn: E205001: Try 'svn help checkout' for more information
+svn: E205001: Not enough arguments provided
+ubuntu@ip-172-31-45-208:/home$ ls
+ubuntu
+ubuntu@ip-172-31-45-208:/home$ cd ubuntu/
+ubuntu@ip-172-31-45-208:~$ cd ubuntu/
+-bash: cd: ubuntu/: No such file or directory
+ubuntu@ip-172-31-45-208:~$ svn checkout
+svn: E205001: Try 'svn help checkout' for more information
+svn: E205001: Not enough arguments provided
+ubuntu@ip-172-31-45-208:~$ cd svn_repo/
+ubuntu@ip-172-31-45-208:~/svn_repo$ svn checkout
+svn: E205001: Try 'svn help checkout' for more information
+svn: E205001: Not enough arguments provided
+ubuntu@ip-172-31-45-208:~/svn_repo$ ls
+README.txt  conf  db  format  hooks  locks
+ubuntu@ip-172-31-45-208:~/svn_repo$ ls
+README.txt  conf  db  format  hooks  locks
+ubuntu@ip-172-31-45-208:~/svn_repo$ 
+ubuntu@ip-172-31-45-208:~/svn_repo$ svn checkout
+svn: E205001: Try 'svn help checkout' for more information
+svn: E205001: Not enough arguments provided
+ubuntu@ip-172-31-45-208:~/svn_repo$ cd ..
+ubuntu@ip-172-31-45-208:~$ svn checkout
+svn: E205001: Try 'svn help checkout' for more information
+svn: E205001: Not enough arguments provided
+ubuntu@ip-172-31-45-208:~$ svn checkout file:///home/ubuntu/svn_repo/trunk my_project
+Checked out revision 1.
+ubuntu@ip-172-31-45-208:~$ cd my_project
+ubuntu@ip-172-31-45-208:~/my_project$ echo "Hello SVN!" > file1.txt
+ubuntu@ip-172-31-45-208:~/my_project$ echo "This is another test file." > file2.txt
+ubuntu@ip-172-31-45-208:~/my_project$ svn status
+?       branches
+?       file1.txt
+?       file2.txt
+?       tags
+?       trunk
+ubuntu@ip-172-31-45-208:~/my_project$ svn add file1.txt file2.txt
+A         file1.txt
+A         file2.txt
+ubuntu@ip-172-31-45-208:~/my_project$ svn commit -m "Initial commit: Added file1.txt, file2.txt"
+Adding         file1.txt
+Adding         file2.txt
+Transmitting file data ..done
+Committing transaction...
+Committed revision 2.
+ubuntu@ip-172-31-45-208:~/my_project$ svn log
+------------------------------------------------------------------------
+r1 | ubuntu | 2025-01-30 12:55:49 +0000 (Thu, 30 Jan 2025) | 1 line
+
+Initial import
+------------------------------------------------------------------------
+ubuntu@ip-172-31-45-208:~/my_project$ echo "New line added to file1.txt" >> file1.txt
+ubuntu@ip-172-31-45-208:~/my_project$ svn status
+?       branches
+M       file1.txt
+?       tags
+?       trunk
+ubuntu@ip-172-31-45-208:~/my_project$ svn commit -m "Updated file1.txt with a new line"
+Sending        file1.txt
+Transmitting file data .done
+Committing transaction...
+Committed revision 3.
+ubuntu@ip-172-31-45-208:~/my_project$ svn copy file:///home/ubuntu/svn_repo/trunk file:///home/ubuntu/svn_repo/branches/feature-branch -m
+svn: missing argument: m
+Type 'svn help' for usage.
+ubuntu@ip-172-31-45-208:~/my_project$ svn copy file:///home/ubuntu/svn_repo/trunk file:///home/ubuntu/svn_repo/branches/feature-branch -m "Creating feature branch"
+Committing transaction...
+Committed revision 4.
+ubuntu@ip-172-31-45-208:~/my_project$ svn list
+ubuntu@ip-172-31-45-208:~/my_project$ svn list file:///home/ubuntu/svn_repo/branches
+feature-branch/
+feature-branch/
+-bash: feature-branch/: No such file or directory
+ubuntu@ip-172-31-45-208:~/my_project$ svn list file:///home/ubuntu/svn_repo/branches/feature-branch/
+file1.txt
+file2.txt
+ubuntu@ip-172-31-45-208:~/my_project$ svn checkout feature-branch my_feature_branch
+svn: E125002: 'feature-branch' does not appear to be a URL
+ubuntu@ip-172-31-45-208:~/my_project$ svn checkout file:///home/ubuntu/svn_repo/branches/feature-branch my_feature_branch
+A    my_feature_branch/file1.txt
+A    my_feature_branch/file2.txt
+Checked out revision 4.
+ubuntu@ip-172-31-45-208:~/my_project$ cd my_feature_branch
+ubuntu@ip-172-31-45-208:~/my_project/my_feature_branch$ echo "Feature branch work" >> file1.txt
+ubuntu@ip-172-31-45-208:~/my_project/my_feature_branch$ svn commit -m "Updated file1.txt in feature branch"
+Sending        file1.txt
+Transmitting file data .done
+Committing transaction...
+Committed revision 5.
+ubuntu@ip-172-31-45-208:~/my_project/my_feature_branch$ sudo apt install git git-svn
+Reading package lists... Done
+Building dependency tree... Done
+Reading state information... Done
+git is already the newest version (1:2.34.1-1ubuntu1.12).
+git set to manually installed.
+The following additional packages will be installed:
+  libsvn-perl libyaml-libyaml-perl libyaml-perl
+Suggested packages:
+  git-doc libyaml-shell-perl
+The following NEW packages will be installed:
+  git-svn libsvn-perl libyaml-libyaml-perl libyaml-perl
+0 upgraded, 4 newly installed, 0 to remove and 0 not upgraded.
+Need to get 1254 kB of archives.
+After this operation, 7170 kB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 libsvn-perl amd64 1.14.1-3ubuntu0.22.04.1 [1083 kB]
+Get:2 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 libyaml-perl all 1.30-1 [58.2 kB]
+Get:3 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy-updates/universe amd64 git-svn all 1:2.34.1-1ubuntu1.12 [82.9 kB]
+Get:4 http://eu-north-1.ec2.archive.ubuntu.com/ubuntu jammy/main amd64 libyaml-libyaml-perl amd64 0.83+ds-1build1 [29.6 kB]
+Fetched 1254 kB in 0s (23.3 MB/s)              
+Selecting previously unselected package libsvn-perl:amd64.
+(Reading database ... 65994 files and directories currently installed.)
+Preparing to unpack .../libsvn-perl_1.14.1-3ubuntu0.22.04.1_amd64.deb ...
+Unpacking libsvn-perl:amd64 (1.14.1-3ubuntu0.22.04.1) ...
+Selecting previously unselected package libyaml-perl.
+Preparing to unpack .../libyaml-perl_1.30-1_all.deb ...
+Unpacking libyaml-perl (1.30-1) ...
+Selecting previously unselected package git-svn.
+Preparing to unpack .../git-svn_1%3a2.34.1-1ubuntu1.12_all.deb ...
+Unpacking git-svn (1:2.34.1-1ubuntu1.12) ...
+Selecting previously unselected package libyaml-libyaml-perl.
+Preparing to unpack .../libyaml-libyaml-perl_0.83+ds-1build1_amd64.deb ...
+Unpacking libyaml-libyaml-perl (0.83+ds-1build1) ...
+Setting up libsvn-perl:amd64 (1.14.1-3ubuntu0.22.04.1) ...
+Setting up libyaml-libyaml-perl (0.83+ds-1build1) ...
+Setting up libyaml-perl (1.30-1) ...
+Setting up git-svn (1:2.34.1-1ubuntu1.12) ...
+Processing triggers for libc-bin (2.35-0ubuntu3.8) ...
+Processing triggers for man-db (2.10.2-1) ...
+Scanning processes...                                                                                                                    
+Scanning candidates...                                                                                                                   
+Scanning linux images...                                                                                                                 
+
+Running kernel seems to be up-to-date.
+
+Restarting services...
+Service restarts being deferred:
+ systemctl restart networkd-dispatcher.service
+ systemctl restart systemd-logind.service
+ systemctl restart unattended-upgrades.service
+
+No containers need to be restarted.
+
+No user sessions are running outdated binaries.
+
+No VM guests are running outdated hypervisor (qemu) binaries on this host.
+ubuntu@ip-172-31-45-208:~/my_project/my_feature_branch$ svn info
+Path: .
+Working Copy Root Path: /home/ubuntu/my_project/my_feature_branch
+URL: file:///home/ubuntu/svn_repo/branches/feature-branch
+Relative URL: ^/branches/feature-branch
+Repository Root: file:///home/ubuntu/svn_repo
+Repository UUID: 9998ea31-2f77-49ec-9ea6-64b185e10f4a
+Revision: 4
+Node Kind: directory
+Schedule: normal
+Last Changed Author: ubuntu
+Last Changed Rev: 4
+Last Changed Date: 2025-01-30 13:16:57 +0000 (Thu, 30 Jan 2025)
+
+ubuntu@ip-172-31-45-208:~/my_project/my_feature_branch$ cd ..
+ubuntu@ip-172-31-45-208:~/my_project$ svn info
+Path: .
+Working Copy Root Path: /home/ubuntu/my_project
+URL: file:///home/ubuntu/svn_repo/trunk
+Relative URL: ^/trunk
+Repository Root: file:///home/ubuntu/svn_repo
+Repository UUID: 9998ea31-2f77-49ec-9ea6-64b185e10f4a
+Revision: 1
+Node Kind: directory
+Schedule: normal
+Last Changed Author: ubuntu
+Last Changed Rev: 1
+Last Changed Date: 2025-01-30 12:55:49 +0000 (Thu, 30 Jan 2025)
+
+ubuntu@ip-172-31-45-208:~/my_project$ git svn clone file:///home/ubuntu/svn_repo --stdlayout --no-metadata git-migration
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint:   git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint:   git branch -m <name>
+Initialized empty Git repository in /home/ubuntu/my_project/git-migration/.git/
+r1 = 7dd58cc5a977ba818fc3accd5a298af643fdd850 (refs/remotes/origin/trunk)
+        A       file1.txt
+        A       file2.txt
+r2 = d3269d99d753e2522ba3df3ea31168539b621dd0 (refs/remotes/origin/trunk)
+        M       file1.txt
+r3 = f5f70a980222d53478a3809c57bff7d4f5f8368c (refs/remotes/origin/trunk)
+Found possible branch point: file:///home/ubuntu/svn_repo/trunk => file:///home/ubuntu/svn_repo/branches/feature-branch, 3
+Found branch parent: (refs/remotes/origin/feature-branch) f5f70a980222d53478a3809c57bff7d4f5f8368c
+Following parent with do_switch
+Successfully followed parent
+r4 = 69c91fad771c9772df4195f9ddea50c3771603d7 (refs/remotes/origin/feature-branch)
+        M       file1.txt
+r5 = 2b90e9f355b43d744ff4e2c7b3fc95e657eaa7a3 (refs/remotes/origin/feature-branch)
+Checked out HEAD:
+  file:///home/ubuntu/svn_repo/trunk r3
+ubuntu@ip-172-31-45-208:~/my_project$ cd git-migration
+ubuntu@ip-172-31-45-208:~/my_project/git-migration$ git log --oneline
+f5f70a9 (HEAD -> master, origin/trunk) Updated file1.txt with a new line
+d3269d9 Initial commit: Added file1.txt, file2.txt
+7dd58cc Initial import
+ubuntu@ip-172-31-45-208:~/my_project/git-migration$ ssh-keygen -t rsa -b 4096 -C "yogeshpri001@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/ubuntu/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/ubuntu/.ssh/id_rsa
+Your public key has been saved in /home/ubuntu/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:0BGNg1TyovTFsPv/rFfGEkqrZIBXL7CdRBCqnPz9ifo yogeshpri001@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|     .**=+       |
+|     .oB=..      |
+|    o.+*=+       |
+| o +.o+=+ o .    |
+|  = ..o.So o o   |
+|   . . .o o . +  |
+|    . .o..   +   |
+|       o.o ..    |
+|    .oE o o+o    |
++----[SHA256]-----+
+ubuntu@ip-172-31-45-208:~/my_project/git-migration$ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDXsqELDP9HYcuoaBWsh7vTnXMwh9IWBBXNQ9BgHru7vLqwZf+FR0WfMGikwZoaFmQ75XdkEN3QumSDkbyt2olOK9wmL9iufdWawp6Rjy4YyryjPvltHvEyORzpqR/UFsujUpRwtwvjShncaeVZFBKF1c+ADmZoQra3vUk+vAWo2lEQGDTUUk/VwEDBaFRuDqWQP4N7SNvTnEJYv6INaTJsFcDIXt/9LEkU0F2LIuFO2hNh7ax8Eh6bJ0nCS0ZbMmxqBtoeQ/a3p+xbQP1rs+x7SpLzigSKWJE7O8v34++ELIx//oMuriP+9FcUWGJqClz3+kiJDyZzplxr/nELqw9HHSXow0fw02ijQTYBVd42adBe/174pGNH+igD/Ha2/5j08JrmTGZEYGG7Fg+ia/QT4ZF0k7IcyE+ylxLAFUuImEApj7B3hyUuxjqQCSca0GzYsdtIG5Za4mF8eD+fVMBb9VfNW5HDVxNOvn+72dHamyKSrhI41Zbhv9G0Js4BhuSIfNKifF5PiU3VwxFHSB75mK6nOWyH8IZk8naXf40IFq6RaDeUsPLfK4ba5uz3aGLCCvQigY8sMp/ucDpGIVh0Ea/V5vGeGQaoxm/QL7jT93W//5pPJguBjyuYcPQE/qjNEdg55pYH57Su2iu0JGJnFxXPxVZ3iUyXncQPex1TwQ== yogeshpri001@gmail.com
+ubuntu@ip-172-31-45-208:~/my_project/git-migration$ git remote add origin git@github.com:yogeshpri/svn_repo.git
+ubuntu@ip-172-31-45-208:~/my_project/git-migration$ git remote --set-upstream origin master
+error: unknown option `set-upstream'
+usage: git remote [-v | --verbose]
+   or: git remote add [-t <branch>] [-m <master>] [-f] [--tags | --no-tags] [--mirror=<fetch|push>] <name> <url>
+   or: git remote rename <old> <new>
+   or: git remote remove <name>
+   or: git remote set-head <name> (-a | --auto | -d | --delete | <branch>)
+   or: git remote [-v | --verbose] show [-n] <name>
+   or: git remote prune [-n | --dry-run] <name>
+   or: git remote [-v | --verbose] update [-p | --prune] [(<group> | <remote>)...]
+   or: git remote set-branches [--add] <name> <branch>...
+   or: git remote get-url [--push] [--all] <name>
+   or: git remote set-url [--push] <name> <newurl> [<oldurl>]
+   or: git remote set-url --add <name> <newurl>
+   or: git remote set-url --delete <name> <url>
+
+    -v, --verbose         be verbose; must be placed before a subcommand
+
+ubuntu@ip-172-31-45-208:~/my_project/git-migration$ git remote set-url origin git@github.com:yogeshpri/svn_repo.git
+ubuntu@ip-172-31-45-208:~/my_project/git-migration$ git push --set-upstream origin master
+The authenticity of host 'github.com (4.225.11.194)' can't be established.
+ED25519 key fingerprint is SHA256:+DiY3wvvV6TuJJhbpZisF/zLDA0zPMSvHdkr4UvCOqU.
+This key is not known by any other names
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'github.com' (ED25519) to the list of known hosts.
+Enumerating objects: 9, done.
+Counting objects: 100% (9/9), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (9/9), 753 bytes | 753.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:yogeshpri/svn_repo.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+ubuntu@ip-172-31-45-208:~/my_project/git-migration$ ^C
+ubuntu@ip-172-31-45-208:~/my_project/git-migration$ 
